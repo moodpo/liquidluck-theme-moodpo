@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#coding: utf-8
 
 name = 'moodpo'
 version = '0.10'
