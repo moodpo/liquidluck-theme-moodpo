@@ -4,28 +4,28 @@
 
 
 {% block main %}
-<ul class="entry-list">
-    {% set year = 0 %}
-    {% for item in pagination.items %}
+
+{% set year = 0 %}
+{% for item in pagination.items %}
     {% if item.date.year != year %}
-    {% set year = item.date.year %}
-    <li class="entry-item entry-item-title">
-    	<a href="{{item|year_url}}">{{item.date.year}}</a>
-    </li>
+    	{% set year = item.date.year %}
+    	<h3><a href="{{item|year_url}}">{{item.date.year}}</a></h3>
     {% endif %}
-    <li class="entry-item">
-        <time class="updated" datetime="{{item.date|xmldatetime}}">{{item.date.strftime('%Y-%m-%d')}}</time>
-        <a href="{{item|permalink}}">{{item.title}}</a>
-    </li>
-    {% endfor %}
-</ul>
+    <ul class="entry-list">
+	    <li class="entry-item">
+	    	<a href="{{item|permalink}}">{{item.title}}</a>
+	        <time class="updated" datetime="{{item.date|xmldatetime}}">{{item.date.strftime('%b %d, %Y')}}</time>
+	    </li>
+    </ul>
+{% endfor %}
+
 
 {% if pagination.has_prev or pagination.has_next %}
 <nav class="pagination">
     {% if pagination.has_prev %}
     <a class="prev" href="{{ content_url(pagination.root, 'page', pagination.prev_num) }}">«Prev</a>
     {% else %}
-    <span class="prev">«Prev</span>
+    <a class="prev">«Prev</a>
     {% endif %}
 
     <span class="current">
@@ -35,7 +35,7 @@
     {% if pagination.has_next %}
     <a class="next" href="{{ content_url(pagination.root, 'page', pagination.next_num) }}">Next»</a>
     {% else %}
-    <span class="next">Next»</span>
+    <a class="next">Next»</a>
     {% endif %}
 </nav>
 {% endif %}
