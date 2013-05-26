@@ -13,8 +13,8 @@ lang = 'zh-CN'
 
 navigation = [
     {'name': 'Home', 'link': 'http://moodpo.com'},
-    {'name': 'Work', 'link': '/work.html'},
-    {'name': 'Life', 'link': '/life.html'},
+    {'name': 'Work', 'link': '/work/'},
+    {'name': 'Life', 'link': '/life/'},
     {'name': 'About', 'link': '/about.html'},
 ]
 
