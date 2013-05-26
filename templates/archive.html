@@ -4,7 +4,7 @@
 
 
 {% block main %}
-
+<div class="grid grid-10 first">
 {% set year = 0 %}
 {% for item in pagination.items %}
     {% if item.date.year != year %}
@@ -14,7 +14,7 @@
     <ul class="entry-list">
 	    <li class="entry-item">
 	    	<a href="{{item|permalink}}">{{item.title}}</a>
-	        <time class="updated" datetime="{{item.date|xmldatetime}}">{{item.date.strftime('%b %d, %Y')}}</time>
+	        <time class="updated" datetime="{{item.date|xmldatetime}}">{{item.date.strftime('%b %d')}}</time>
 	    </li>
     </ul>
 {% endfor %}
@@ -39,4 +39,6 @@
     {% endif %}
 </nav>
 {% endif %}
+</div>
+<div class="grid grid-10 last">&nbsp;</div>
 {% endblock %}
