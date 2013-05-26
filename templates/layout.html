@@ -17,17 +17,13 @@
 		<header id="header" class="grid grid-20">
 			<div class="grid grid-6 first">
 				{% block header %}
-	            <h1 id="logo">{{site.name}}</h1>
+	            <h1 id="logo"><a href="{{site.url}}">{{site.name}}</a></h1>
 	            <p id="tagline">{{site.discriptions}}</p>
 	            {% endblock %}
         	</div>
 	        <div class="grid grid-4">&nbsp;</div>
 	        {% block nav %}
-	        <div class="grid grid-10 last nav">
-	        	{% for item in theme.navigation %}
-                	<a href="{{item.link}}">{{item.name}}</a>
-                {% endfor %}
-	        </div>
+	        
 	        {% endblock %}
 		</header>
 		<!-- /#header -->

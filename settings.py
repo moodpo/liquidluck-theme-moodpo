@@ -12,7 +12,7 @@ author = {
 lang = 'zh-CN'
 
 navigation = [
-    {'name': 'Home', 'link': 'http://moodpo.com'},
+    {'name': 'Archive', 'link': '/'},
     {'name': 'Work', 'link': '/work/'},
     {'name': 'Life', 'link': '/life/'},
     {'name': 'About', 'link': '/about.html'},

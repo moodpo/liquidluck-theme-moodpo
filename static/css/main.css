@@ -222,7 +222,8 @@ table{
 
 /*---------- Back to top ----------*/
 
-.link-back2top { 
+.link-back2top {
+	display: none;
 	position: fixed; 
 	right: 0; top: 80%; 
 	width: 120px; 

@@ -2,6 +2,13 @@
 
 {% block title %}{{pagination.title|title}} - {{site.name}}{% endblock %}
 
+{% block nav %}
+<div class="grid grid-10 last nav">
+    {% for item in theme.navigation %}
+        <a href="{{item.link}}" {% if item.name == (pagination.title|title) %} class="current" {% endif %}>{{item.name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
 
 {% block main %}
 <div class="grid grid-10 first">
