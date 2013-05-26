@@ -131,12 +131,34 @@ img{
 	vertical-align: middle;
 }
 
+.post-tags{
+	padding: 5px 8px;
+	background: #fff8e8;
+}
+
+.post-tags a{
+	margin:0 5px;
+}
 
 
 
+/*---------- archive css ----------*/
 
-.ds-powered-by{
-	display: none;
+ul.entry-list li{
+	list-style: none;
+}
+
+nav.pagination{
+	margin: 10px 0;
+	text-align: center;
+}
+
+nav.pagination a.prev{
+	float: left;
+}
+
+nav.pagination a.next{
+	float: right;
 }
 
 /*---------- footer css ----------*/
