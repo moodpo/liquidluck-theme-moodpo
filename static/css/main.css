@@ -138,6 +138,9 @@ blockquote p{
 }
 
 /*---------- archive css ----------*/
+ul.entry-list{
+	padding: 0 40px;
+}
 
 ul.entry-list li{
 	list-style: none;
