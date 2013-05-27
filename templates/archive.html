@@ -12,12 +12,12 @@
 
 {% block main %}
 <div class="grid grid-10 first">
-<h1>文章列表</h1>
+<h1 align="center">文章列表</h1>
 {% set year = 0 %}
 {% for item in pagination.items %}
     {% if item.date.year != year %}
     	{% set year = item.date.year %}
-    	<h3><a href="{{item|year_url}}">{{item.date.year}}</a></h3>
+    	<h3 align="center"><a href="{{item|year_url}}">{{item.date.year}}年</a></h3>
     {% endif %}
     <ul class="entry-list">
 	    <li class="entry-item">
