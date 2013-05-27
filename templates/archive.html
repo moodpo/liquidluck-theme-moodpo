@@ -5,7 +5,7 @@
 {% block nav %}
 <div class="grid grid-10 last nav">
     {% for item in theme.navigation %}
-        <a href="{{item.link}}" {% if item.name == (pagination.title|title) %} class="current" {% endif %}>{{item.name}}</a>
+        <a href="{{item.link}}" {% if item.name == (pagination.title|title) %} class="current" {% endif %}>{% if item.name == "Archive" -%} Home {%- else -%} {{item.name}} {%- endif %}</a>
     {% endfor %}
 </div>
 {% endblock %}
@@ -33,7 +33,7 @@
     {% if pagination.has_prev %}
     <a class="prev" href="{{ content_url(pagination.root, 'page', pagination.prev_num) }}">«Prev</a>
     {% else %}
-    
+    <span class="prev">«Prev</span>
     {% endif %}
 
     <span class="current">
@@ -43,7 +43,7 @@
     {% if pagination.has_next %}
     <a class="next" href="{{ content_url(pagination.root, 'page', pagination.next_num) }}">Next»</a>
     {% else %}
-    
+    <span class="next">Next»</span>
     {% endif %}
 </nav>
 {% endif %}
