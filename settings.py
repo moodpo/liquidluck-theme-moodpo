@@ -15,7 +15,6 @@ navigation = [
     {'name': 'Archive', 'link': '/'},
     {'name': 'Work', 'link': '/work/'},
     {'name': 'Life', 'link': '/life/'},
-    {'name': 'About', 'link': '/about.html'},
 ]
 
 

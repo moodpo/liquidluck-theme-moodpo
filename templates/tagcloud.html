@@ -2,25 +2,33 @@
 
 {% block title %}Tagcloud - {{site.name}}{% endblock %}
 
+{% block nav %}
+<div class="grid grid-10 last nav">
+    {% for item in theme.navigation %}
+        <a href="{{item.link}}" {% if item.name == "Archive" %} class="current" {% endif %}>{{item.name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+
 {% block main %}
-<nav class="tagcloud">
-    {% for tag in tags -%}
-    {%- set items = tags[tag] -%}
-    <a href="#{{tag}}">{{tag}}<span class="count">({{items|length}})</span></a>
-    {%- endfor %}
-</nav>
-<ul class="entry-list">
-    {% for tag in tags -%}
-    {%- set items = tags[tag] -%}
-    <li id="{{tag}}" class="entry-item entry-item-title">
-    <a href="#{{tag}}">{{tag}}</a>
-    </li>
-    {% for item in items -%}
-    <li class="entry-item">
-        <time class="updated" datetime="{{item.date|xmldatetime}}">{{item.date.strftime('%Y-%m-%d')}}</time>
-        <a href="{{item|permalink}}">{{item.title}}</a>
-    </li>
-    {%- endfor %}
-    {%- endfor %}
-</ul>
+<div class="grid grid-10 first">
+	<h1>标签云</h1>
+    <nav class="tagcloud">
+        {% for tag in tags -%}
+        {%- set items = tags[tag] -%}
+        <a id="{{tag}}" href="{{tag}}/">{{tag}}<span class="count">({{items|length}})</span></a>
+        {%- endfor %}
+    </nav>
+</div>
+<div class="grid grid-10 last">
+	<section class="about-author">
+		<img width="400px" height="200px" src="{{static_url('img/author.jpg')}}">
+		<p>Hi ! I am a geeker named <a href="https://twitter.com/yxiaoxie">@yangxiaoxie</a> . I am a programmer currently ，daily use of language is Java / JavaScript ，now working in <a href="http://ultrapower.com.cn">Ultrapower</a> . I like Open Source , interest on interaction design, attention to user experience .</p>
+		<ul>
+			<li class="twitter"><a href="https://twitter.com/yxiaoxie">@yxiaoxie</a></li>
+			<li class="weibo"><a href="http://weibo.com/u/1766082131">yangxiaoxiehaha</a></li>
+			<li class="email"><a href="mailto:yangxiaoxiehaha@gmail.com">yangxiaoxiehaha [at] gmail.com</a></li>
+		</ul>
+	</section>
+</div>
 {% endblock %}
